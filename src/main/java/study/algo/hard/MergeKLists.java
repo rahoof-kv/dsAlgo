@@ -1,6 +1,5 @@
 package study.algo.hard;
 
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class MergeKLists {
@@ -13,7 +12,7 @@ public class MergeKLists {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for (ListNode head : lists) {
-            while (head != null){
+            while (head != null) {
                 minHeap.add(head.val);
                 head = head.next;
             }
@@ -22,7 +21,7 @@ public class MergeKLists {
         ListNode dummy = new ListNode(-1);
         ListNode head = dummy;
 
-        while (!minHeap.isEmpty()){
+        while (!minHeap.isEmpty()) {
             Integer value = minHeap.remove();
             head.next = new ListNode(value);
             head = head.next;
