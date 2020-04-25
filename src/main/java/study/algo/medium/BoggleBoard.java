@@ -126,7 +126,7 @@ public class BoggleBoard {
         public SuffixTrie() {
             this.root = new TrieNode();
             this.endSymbol = '*';
-            ;
+
         }
 
 

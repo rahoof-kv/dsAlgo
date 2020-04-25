@@ -74,7 +74,10 @@ public class ArticulationPointsAdjacencyList {
             if (!visitedNodes[toNode]) {
                 dfs(root, toNode, fromNode, visitedNodes, graph, nodeIds, lowLinkValues, isArticulationPoint, rootNodeOutcomingEdgeCount);
                 lowLinkValues[fromNode] = Math.min(lowLinkValues[fromNode], lowLinkValues[toNode]);
-                if (nodeIds[fromNode] <= lowLinkValues[toNode]) {
+                if (nodeIds[fromNode] < lowLinkValues[toNode]) { // To find articulation point via bridge
+                    isArticulationPoint[fromNode] = true;
+                }
+                if (nodeIds[fromNode] == lowLinkValues[toNode]) { // To find articulation point via cycle
                     isArticulationPoint[fromNode] = true;
                 }
             } else {

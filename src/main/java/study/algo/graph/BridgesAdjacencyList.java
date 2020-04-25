@@ -62,7 +62,6 @@ public class BridgesAdjacencyList {
     private static void dfs(int fromNode, int parent, boolean[] visitedNodes, List<List<Integer>> graph, int[] nodeIds, int[] lowLinkValues, List<Integer> bridgeList) {
 
         visitedNodes[fromNode] = true;
-        //lowLinkValues[fromNode] = nodeIds[fromNode];
 
         for(Integer toNode: graph.get(fromNode)) {
             if(toNode == parent) {
